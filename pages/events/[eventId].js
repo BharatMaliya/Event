@@ -9,7 +9,11 @@ const EventDetailPage = () => {
   const router = useRouter();
   const event = getEventById(router.query.eventId);
   if (!event) {
-    return <p>No event found</p>;
+    return (
+      <ErrorEvent>
+        <p>No event found</p>
+      </ErrorEvent>
+    );
   }
   return (
     <Fragment>
